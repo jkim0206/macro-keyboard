@@ -324,27 +324,11 @@ Send, ^+{Escape}
 else if(key = "num4")
 switchToExplorer()
 else if(key = "num5")
-{
-Send, ^{Escape}
-sleep 200
-Send, Bitdefender
-sleep 200
-Send, {Enter}
-sleep 10000
-MouseMove, 810, 582
-sleep 200
-MouseClick
-sleep 3000
-Send, #{Down}
-sleep 200
-MouseMove, 939, 18
-sleep 200
-MouseClick
-}
+Run, https://192.168.86.36
 else if(key = "num6")
-Run, mspaint.exe
+Run, https://www.ebay.com/mys/overview?MyEbayBeta&CurrentPage=MyeBayNextAllSelling
 else if(key = "num7")
-Run, mspaint.exe
+switchToDiscord()
 else if(key = "num8")
 Run, mspaint.exe
 else if(key = "num9")
@@ -753,6 +737,14 @@ IfWinNotExist, ahk_exe Taskmgr.exe
 	Run, Taskmgr.exe
 
 }
+
+switchToDiscord()
+{
+IfWinNotExist, ahk_exe Discord.exe
+	Run, C:\Users\joshu\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk
+else
+	WinActivate ahk_exe Discord.exe
+} 
 
 #IfWinActive
 windowSwitcher(theClass, theEXE)
